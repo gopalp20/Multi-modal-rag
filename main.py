@@ -4,7 +4,7 @@ from ingestion.pdf_loader import load_pdf
 from processing.text_splitter import split_documents
 from processing.embeddings import create_embeddings
 
-from vectorstore.chroma_store import create_vector_store
+from vectorstore.qdrant_store import create_vector_store
 
 from retrieval.retriever import retrieve_documents
 
@@ -53,8 +53,7 @@ vector_store = create_vector_store(
     chunks,
     embeddings
 )
-
-print("Chunks stored in ChromaDB")
+print("Chunks stored in Qdrant Cloud")
 
 
 # -----------------------------
